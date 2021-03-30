@@ -188,11 +188,11 @@
                 <div class="flex md:flex-row-reverse flex-wrap">
                     <div class="w-full md:w-3/4 p-4 text-center">
                     <div class="text-left pl-4 pt-3">
-                        <span class="text-base text-gray-700 text-2xl mr-2">{{ Auth::user()->username }}</span>
+                        <span class="text-base text-gray-700 text-2xl mr-2">{{ $user->username }}</span>
                         <span class="text-base font-semibold text-gray-700 mr-2">
-                        <button
+                        <a href="#"
                             class="bg-transparent hover:bg-blue-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-600 hover:border-transparent rounded"
-                        >Edit Profile</button>
+                        >Add New Post</a>
                         </span>
                         <span class="text-base font-semibold text-gray-700">
                         <button
@@ -230,16 +230,21 @@
                     </div>
 
                     <div class="text-left pl-4 pt-3">
-                        <span class="text-lg font-bold text-gray-700 mr-2">{{ Auth::user()->name }}</span>
+                        <span class="text-lg font-bold text-gray-700 mr-2">{{ $user->name }}</span>
                     </div>
 
                     <div class="text-left pl-4 pt-3">
                         <p
                         class="text-base font-medium text-blue-700 mr-2"
-                        >#graphicsdesigner #traveller #reader #blogger #digitalmarketer</p>
+                        >{{ $user->profile->title }}</p>
                         <p
                         class="text-base font-medium text-gray-700 mr-2"
-                        >https://www.behance.net/hiravesona7855</p>
+                        >{{ $user->profile->description }}
+                        </p>
+                        <a href="/{{ $user->profile->url }}"
+                        class="text-base font-medium text-blue-700 mr-2"
+                        >{{ $user->profile->url }}
+                        </a>
                     </div>
                     </div>
 
